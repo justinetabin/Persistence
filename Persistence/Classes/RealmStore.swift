@@ -50,7 +50,7 @@ public class RealmStore<T: Object> {
         }
     }
     
-    public func get(primaryKey: String, callback: @escaping (T?, Error?) -> Void) {
+    public func get(primaryKey: Any, callback: @escaping (T?, Error?) -> Void) {
         let object = realm.object(ofType: T.self, forPrimaryKey: primaryKey)
         callback(object, nil)
     }
